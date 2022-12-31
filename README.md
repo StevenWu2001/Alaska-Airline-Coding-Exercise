@@ -1,8 +1,12 @@
 # Alaska-Airline-Coding-Exercise
 ### Questions
+- 
+- 
 
 ### My Assumptions
+Two of my assumptions that reserved seats are all valid and are distict have been stated in the instruction.
 
+I also assumed that each row will only have 10 seats (with 2 aisles in between) as the instruction mentioned.
 
 ### Different Solution Paths
 I feel like this is a very interesting problem. At the first glance, it really doesn't seem that hard, since the instrustions are clear and the goal is simple. But as I start working on it, many different ideas and potential pitfalls (like runtime, space usuage, implementation, etc.) popped up in my mind and I thought about it for a good while.
