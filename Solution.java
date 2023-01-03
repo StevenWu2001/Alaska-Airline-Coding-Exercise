@@ -28,11 +28,9 @@ public class Solution {
             // Each row starts with 3 available seating options
 
             char row = reserved.charAt(i), col = reserved.charAt(i + 1);
-            occupiedRows.putIfAbsent(row, (byte) 0b111);
+            byte curr = occupiedRows.getOrDefault(row, (byte) 0b111);
 
             // Calculate how each reserved seat affects the current seating options in the row
-
-            byte curr = occupiedRows.get(row);
 
             if (col == 'B' || col == 'C') {
                 curr &= 0b011;
