@@ -75,4 +75,10 @@ public class SolutionTest {
         String input = "1A";
         assertEquals(10, solution.maxFamilySeats(input), "Wrong answer for input: " + input);
     }
+
+    @Test
+    public void test9() {
+        String input = "2F 4B 5J";
+        assertEquals(7, solution.maxFamilySeats(input), "Wrong answer for input: " + input);
+    }
 }

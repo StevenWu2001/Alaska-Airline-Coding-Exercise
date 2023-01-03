@@ -20,7 +20,7 @@ public class Solution {
      */
 
     public int maxFamilySeats(String reserved) {
-        Map<Character, Integer> occupiedRows = new HashMap<>(); // Stores status of occupied rows
+        Map<Character, Byte> occupiedRows = new HashMap<>(); // Stores status of occupied rows
         int maxFamily = 0;
 
         for (int i = 0; i < reserved.length(); i += 3){
@@ -28,11 +28,11 @@ public class Solution {
             // Each row starts with 3 available seating options
 
             char row = reserved.charAt(i), col = reserved.charAt(i + 1);
-            occupiedRows.putIfAbsent(row, 0b111);
+            occupiedRows.putIfAbsent(row, (byte) 0b111);
 
             // Calculate how each reserved seat affects the current seating options in the row
 
-            int curr = occupiedRows.get(row);
+            byte curr = occupiedRows.get(row);
 
             if (col == 'B' || col == 'C') {
                 curr &= 0b011;
@@ -54,7 +54,7 @@ public class Solution {
             if (avail == 0b111 || avail == 0b101) {
                 maxFamily += 2;
             } else if (avail > 0) {
-                maxFamily++;
+                maxFamily += 1;
             }
         }
 
