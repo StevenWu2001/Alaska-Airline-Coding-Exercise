@@ -3,9 +3,7 @@ import java.util.Map;
 
 public class Solution {
 
-    // Define row and column constants
-
-    static int ROW = 5, COL = 10;
+    int ROW = 5;
 
     /**
      * This solution manipulates binary bits to simulate the status of a row. Given the current seating, a row
@@ -21,16 +19,15 @@ public class Solution {
      * Space Complexity: O(M), M is the number of occupied rows
      */
 
-    public static int maxFamilySeats(String reserved) {
-        Map<Character, Integer> occupiedRows = new HashMap<>();
+    public int maxFamilySeats(String reserved) {
+        Map<Character, Integer> occupiedRows = new HashMap<>(); // Stores status of occupied rows
         int maxFamily = 0;
-        String[] split = reserved.split("\\s+");
 
-        for (int i = 0; i < split.length; i++) {
+        for (int i = 0; i < reserved.length(); i += 3){
 
             // Each row starts with 3 available seating options
 
-            char row = split[i].charAt(0), col = split[i].charAt(1);
+            char row = reserved.charAt(i), col = reserved.charAt(i + 1);
             occupiedRows.putIfAbsent(row, 0b111);
 
             // Calculate how each reserved seat affects the current seating options in the row
@@ -61,27 +58,8 @@ public class Solution {
             }
         }
 
-        // The returned value also needs to include seats from unoccupied rows
+        //  Seats from unoccupied rows should also be included
 
         return maxFamily + (ROW - occupiedRows.size()) * 2;
-    }
-
-    /**
-     * The main method for testing
-     * @param args
-     */
-
-    public static void main(String[] args) {
-        String[] inputs = {
-                "1A 2F 1C 3E 4F 5H",
-                "5E 5F 4E 4F 3E 3F 2E 2F 1E 1F",
-                "4J 3J 2J 1J 5J",
-                "1B 1E 3A 2D 2H 4C 4E 5E",
-                "2E 5E 4F 3G 4H"
-        };
-
-        for (int i = 0; i < inputs.length; i++) {
-            System.out.println(maxFamilySeats(inputs[i]));
-        }
     }
 }
