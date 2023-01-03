@@ -1,5 +1,6 @@
 # Alaska-Airline-Coding-Exercise
-I am using Java for this exercise.
+I am using Java for this exercise. The method ```maxFamilySeats``` inside the ```Solution``` class implements the solution. I also included a file that I used to test the program.
+
 ### Questions
 - 
 - 
