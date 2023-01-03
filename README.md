@@ -2,8 +2,7 @@
 I am using Java for this exercise. The method ```maxFamilySeats``` inside the ```Solution``` class implements the solution. I also included a file that I used to test the program.
 
 ### Questions
-- 
-- 
+The instruction says there are only 5 rows on this plane. I wonder for this problem if we should consider potentially more rows, even though it is not stated in the problem.
 
 ### My Assumptions
 My assumption that reserved seats are all valid and distict had been stated in the instruction.
