@@ -24,9 +24,6 @@ public class Solution {
         int maxFamily = 0;
 
         for (int i = 0; i < reserved.length(); i += 3){
-
-            // Each row starts with 3 available seating options
-
             char row = reserved.charAt(i), col = reserved.charAt(i + 1);
             byte curr = occupiedRows.getOrDefault(row, (byte) 0b111);
 
