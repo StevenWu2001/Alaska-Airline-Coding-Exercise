@@ -36,7 +36,7 @@ public class SolutionThreeSeats {
             } else if (col == 'G') {
                 curr &= 0b1101;
             } else if (col == 'E' || col == 'F') {
-                curr &= 1001;
+                curr &= 0b1001;
             } else if (col == 'H' || col == 'J' || col == 'K') {
                 curr &= 0b1110;
             }
